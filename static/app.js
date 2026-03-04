@@ -121,9 +121,7 @@ function renderDetailView() {
   }
 
   container.innerHTML = `
-    <div class="detail-toolbar">
-      <button id="backButton">Volver</button>
-    </div>
+    <button id="backButton">Volver</button>
     <div class="detail-top">
       <div class="card detail-title">${well.id}</div>
       <div class="card approval-controls">
@@ -139,7 +137,7 @@ function renderDetailView() {
         ${Object.entries(well.checklist).map(([key, value]) => `
           <label class="checklist-item">
             <input type="checkbox" data-check="${key}" ${value ? 'checked' : ''}/>
-            ${key.replaceAll('_', ' ').replace(/\b\w/g, (c) => c.toUpperCase())}
+            ${key.replaceAll('_', ' ')}
           </label>
         `).join('')}
       </div>
